@@ -12,3 +12,19 @@ knitr::opts_chunk$set(echo = TRUE)
 ## R Markdown
 
 file that answers the analysis questions. Both files should be clearly coded and commented.
+```{r}
+library(tidyverse)
+library(here)
+```
+
+
+
+```{r}
+
+#test where the top level of the project directory is 
+here::here()
+
+#use this to set the path to the data file
+seabird_data <- readxl::read_xls((here("raw_data/seabirds.xls")))
+```
+
