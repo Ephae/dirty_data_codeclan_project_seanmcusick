@@ -1,0 +1,14 @@
+---
+title: "task3_seabird_analysis"
+author: "Seàn M. Cusick"
+date: "03/01/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+file that answers the analysis questions. Both files should be clearly coded and commented.
