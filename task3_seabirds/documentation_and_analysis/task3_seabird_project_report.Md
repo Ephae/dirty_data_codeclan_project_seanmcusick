@@ -1,6 +1,10 @@
 # This document should include:
 
 ## A brief introduction to the dataset
+
+ // WRITE AN INTRO TO THE DATASET // 4 sheets; Two records, two descriptions
+ 
+ 
 seabird_data -
 sheet: Ship data by record ID
 12310 observations of 27 Variables
@@ -79,6 +83,21 @@ sheet: Bird data codes
 
 ## A list of any assumptions you have made
 
+* sheet shipdata important data
+** Record
+** Record ID
+** Date?
+** latitude/longitude
+
+
+* sheet birddata important data
+** Record
+** Record ID
+** Species common
+** Species scientfiic
+** Species Abb
+** Count
+
 
 ## The steps you took to clean the data (you don’t need to write out in detail every step, but a combination of commented code chunks with surrounding overall explanations would be great).
 
@@ -87,18 +106,28 @@ sheet: Bird data codes
 
 
 ## The answers to the questions presented in the task brief
+
 * Which bird had the most individual sightings?
+
 * Which bird had the highest total count?
+
 * Which bird had the highest total count above a latitude of -30?
+
 * How many different types of birds were only ever seen in groups of 1?
+
 * How many penguins were seen? (Hint: there are many types of penguin)
+
 
 ## Any other interesting analyses or conclusions you come across.
 
 
 
 # Expectations
-The clean data should be in tidy format as covered in week 3.
-Follow the style guide covered in week 1 for both code style, and naming data and variables.
-Look over the reproducibility lesson from week 1 again to help you think about how to organise your project. Following the steps there to ensure reproducibility and clarity for review, and recap the hints and tips for writing documentation.
-While the datasets in all of these projects are pretty small (and so processing power won’t be an issue), do think about efficient ways of answering the questions. By this we don’t necessarily mean that you should write code that runs as fast as possible (as this sometimes can make code more difficult to read), but rather look to avoid overcomplicating the code, and any ‘hard coding’.
+
+* The clean data should be in tidy format as covered in week 3.
+
+* Follow the style guide covered in week 1 for both code style, and naming data and variables.
+
+* Look over the reproducibility lesson from week 1 again to help you think about how to organise your project. Following the steps there to ensure reproducibility and clarity for review, and recap the hints and tips for writing documentation.
+
+* While the datasets in all of these projects are pretty small (and so processing power won’t be an issue), do think about efficient ways of answering the questions. By this we don’t necessarily mean that you should write code that runs as fast as possible (as this sometimes can make code more difficult to read), but rather look to avoid overcomplicating the code, and any ‘hard coding’.
