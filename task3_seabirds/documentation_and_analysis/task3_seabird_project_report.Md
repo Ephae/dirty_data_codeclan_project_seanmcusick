@@ -5,14 +5,14 @@
  // WRITE AN INTRO TO THE DATASET // 4 sheets; Two records, two descriptions
  
  
-seabird_data -
-sheet: Ship data by record ID
+
+sheet 1: Ship data by record ID
 12310 observations of 27 Variables
 27 variables:
   * Record (1 - 12310) original record order
   * Record ID (1083001 - 88007036) - record identifier to link ship and bird data
   * Date (1969-07-31 -- 1990-12-21) 
-  * Time (- time has a date - 1900-01-01 00:00:00 to 1899-12-31 01:00:00) needs to be removed // local time _at start of count_
+  * Time (- time has a date - 1900-01-01 00:00:00 to 1899-12-31 01:00:00) // local time _at start of count_ 
   * Latitude (-69 to -19) Where will that place it? decimal
   * Longitude (50 to 179.9833) Where will that place it?
   * EW - East or West hemisphere
@@ -38,8 +38,11 @@ sheet: Ship data by record ID
   * LATCELL (-69.5 -- -19.5) one degree latitude call centre
   * LONGECELL (50.5 -- 184.5)one degree longitude call centre
   
-sheet: Bird data by record ID
-  * RECORd
+  
+sheet 2 : Bird data by record ID
+  49019 observations,
+  26 variables:
+  * RECORD
   * RECORD ID
   * Species common name (taxon [AGE / SEX / PLUMAGE PHASE])
   * Species  scientific name (taxon [AGE /SEX /  PLUMAGE PHASE])
@@ -65,20 +68,24 @@ sheet: Bird data by record ID
   * OCFOL - Ship following in wake occurrence
   * OCMOULT - Occurrence of moult
   * OCNATFED - Naturally feeding occurrence (not feeding around or behind ship)
-  * 
-  * 
   
   
   
-  
-sheet: Ship data codes - Table
-  * Label //	Definition //	Type of variable, unit and coding
+sheet 3: Ship data codes - Table
+  109* observations, // TABLE FORMATTING INCREASES OBS. COUNT
+  3 variables:
+  * Label
+  * Definition
+  * Type of variable, unit and coding
 
-  * 
   
-sheet: Bird data codes
-  * Label //	Definition //	Type of variable, unit and coding
-  * 
+sheet 4: Bird data codes
+  71* observations, // TABLE FORMATTING INCREASES OBS. COUNT
+    3 variables:
+  * Label
+  * Definition
+  * Type of variable, unit and coding
+
     
 
 ## A list of any assumptions you have made
@@ -90,12 +97,12 @@ sheet: Bird data codes
 ** latitude/longitude
 
 
-* sheet birddata important data
+* sheet bird data important data
 ** Record
 ** Record ID
 ** Species common
-** Species scientfiic
-** Species Abb
+** Species scientific
+** Species Abbreviation
 ** Count
 
 
