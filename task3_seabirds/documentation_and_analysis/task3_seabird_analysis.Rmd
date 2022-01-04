@@ -15,6 +15,8 @@ file that answers the analysis questions. Both files should be clearly coded and
 ```{r}
 library(tidyverse)
 library(here)
+library(janitor)
+library(dplyr)
 ```
 ### .R WORKING ###
 
@@ -33,7 +35,7 @@ seabird_data_xls_sheets <- readxl::excel_sheets(path = seabird_data_xls)
 
 
 
-#1 Imports sheet for .xls file
+# Imports sheet for .xls file
 ```{r}
 seabird_ship_data <- readxl::read_xls(path = seabird_data_xls, sheet = "Ship data by record ID")
 
@@ -49,23 +51,64 @@ seabird_bird_data_codes <- readxl::read_xls(path = seabird_data_xls, sheet = "Bi
 
 #2 Changes the names of the variables to follow naming standards.
 
-# create new data-frame clean the headers
-meteorite_data_clean <- clean_names(meteorite_data)
+# creates new data-frames with cleaned headers, creates NA
+```{r}
+clean_ship_data <- clean_names(seabird_ship_data)
+
+clean_bird_data <- clean_names(seabird_bird_data)
+```
+
+
 
 # ensure dataset follows naming standards by lowering case and removing punctuation
-meteorite_data_clean <- meteorite_data_clean %>% 
-  mutate(# Clean name column
-    name = str_to_lower(name),
-    name = str_replace_all(name, "\\(|\\)", ""),
-    name = str_replace_all(name, "',-`", "_"),
-    name = str_replace_all(name, " ", "_"),
-    # clean fall column
-    fall = str_to_lower(fall),
-    # clean GeoLocation column
-    geo_location = str_replace_all(
-      geo_location, "\\(|\\)", "")   
+```{r - clean shipdata}
+clean_ship_data <- clean_ship_data %>% 
+  mutate(
+    observer = str_to_lower(obs),
+    .keep = "unused",
+    .after = record_id
   )
 
+```
+
+```{r - function: clean variables}
+
+```
+
+```{r - clean birddata}
+clean_bird_data <- clean_bird_data %>% 
+  mutate(
+    common_name =
+      str_to_lower(
+        species_common_name_taxon_age_sex_plumage_phase),
+    common_name = str_replace_all(common_name, "[[:punct:]][^[:alnum:]]", ""),
+    common_name = str_replace_all(common_name, "',-`", "_")
+    # name = str_replace_all(name, " ", "_"),
+    
+    scientific_name =
+      str_to_lower(
+        species_scientific_name_taxon_age_sex_plumage_phase),
+    
+    species_abbreviation =
+      str_to_lower(
+        species_abbreviation),
+      .keep = "unused",
+      .after = record_id,
+    )
+  
+  #   mutate(# Clean name column
+  #   observer = str_to_lower(obs),
+  #   name = str_replace_all(name, "\\(|\\)", ""),
+  #   name = str_replace_all(name, "',-`", "_"),
+  #   name = str_replace_all(name, " ", "_"),
+  #   # clean fall column
+  #   fall = str_to_lower(fall),
+  #   # clean GeoLocation column
+  #   geo_location = str_replace_all(
+  #     geo_location, "\\(|\\)", "")
+  # )
+
+```
 
 
 # Wrangling Data  --------------------------
